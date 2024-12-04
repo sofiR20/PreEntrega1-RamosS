@@ -11,6 +11,10 @@ let result = num1+num2;
 console.log("El resultado de la suma es: ", result);
 
 let ingreso = prompt("Ingresá tu nombre").toUpperCase();
+while (ingreso === null || ingreso.trim() === "") {
+    // Si el usuario cancela o deja vacío, muestra el mensaje y vuelve a pedir el nombre
+    ingreso = prompt("No es posible dejar el campo vacío. Por favor, ingresá tu nombre:");
+}
 
 // CLASE NÚMERO 2 (CONTROL DE FLUJOS)
 
@@ -36,9 +40,20 @@ if (number === 20) {
 }
 
 function sumarDosNumeros() {
-    let num1 = parseFloat(prompt("Ingresá un primer número").replace(",", "."));
-    let num2 = parseFloat(prompt("Ingresá un segundo número").replace(",", "."));
-    
+    let num1 = prompt("Ingresá un primer número").replace(",", ".");
+    if (num1 === null || num1.trim() === "") {
+        alert("No es posible dejar el campo vacío. Por favor, ingresá un número válido.");
+        return; 
+    }
+    num1 = parseFloat(num1); // Convertir a número luego de validarlo.
+
+    let num2 = prompt("Ingresá un segundo número").replace(",", ".");
+    if (num2 === null || num2.trim() === "") {
+        alert("No es posible dejar el campo vacío. Por favor, ingresá un número válido.");
+        return;
+    }
+    num2 = parseFloat(num2); // Convertir a número luego de validarlo.
+
     if (isNaN(num1) || isNaN(num2)) {
         alert("Por favor, ingresá solo números válidos.");
     } else {
@@ -46,7 +61,7 @@ function sumarDosNumeros() {
         alert("El resultado de la suma es: " + resultado);
     }
 }
-sumarDosNumeros();  
+sumarDosNumeros();
 
 // CLASE NÚMERO 3 (CICLOS E ITERACIONES)
 
@@ -98,7 +113,7 @@ verificarUsuario();
 
 // Función principal para llamar a las demas funciones
 function ejecutarPrograma() {
-    alert("Bienvenido al programa interactivo");
+    alert("Bienvenido al programa de interacción");
     let opcion = prompt(
         "Elegí una opción:\n1. Sumar dos números\n2. Verificar usuario\n3. Contar hasta un número\n4. Repetir mensaje\n5. Salir"
     );
@@ -122,7 +137,7 @@ function ejecutarPrograma() {
             break;
         case "5":
             alert("Gracias por usar el programa. ¡Adiós!");
-            return; // Salir del programa
+            return; // Salir
         default:
             alert("Opción no válida, intentá de nuevo.");
             break;
