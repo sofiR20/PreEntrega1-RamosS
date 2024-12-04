@@ -12,7 +12,6 @@ console.log("El resultado de la suma es: ", result);
 
 let ingreso = prompt("Ingresá tu nombre").toUpperCase();
 while (ingreso === null || ingreso.trim() === "") {
-    // Si el usuario cancela o deja vacío, muestra el mensaje y vuelve a pedir el nombre
     ingreso = prompt("No es posible dejar el campo vacío. Por favor, ingresá tu nombre:");
 }
 
@@ -61,17 +60,19 @@ function sumarDosNumeros() {
         alert("El resultado de la suma es: " + resultado);
     }
 }
-sumarDosNumeros();
 
 // CLASE NÚMERO 3 (CICLOS E ITERACIONES)
 
 // FOR
 function contarHasta(numeroFinal) {
+    if (isNaN(numeroFinal) || numeroFinal <= 0) {
+        alert("Por favor, ingresa un número mayor que 0.");
+        return;
+    }
     for (let i = 0; i <= numeroFinal; i++) {
         console.log("Contando hasta", i);
     }
 }
-contarHasta();
 
 // WHILE
 function repetirMensaje() {
@@ -81,7 +82,6 @@ function repetirMensaje() {
         continuar = confirm("¿Desea continuar?");
     }
 }
-repetirMensaje();
 
 // DO ... WHILE
 function verificarUsuario() {
@@ -106,44 +106,45 @@ function verificarUsuario() {
         }
     } while (identificar === true);
 }
-verificarUsuario();
 
 // CLASE NÚMERO 4 (FUNCIONES / FUNCTION)
 /* Fueron aplicadas en módulos reutilizables a todo el código. */
 
-// Función principal para llamar a las demas funciones
+// Función principal para llamar a las demás funciones.
 function ejecutarPrograma() {
-    alert("Bienvenido al programa de interacción");
-    let opcion = prompt(
-        "Elegí una opción:\n1. Sumar dos números\n2. Verificar usuario\n3. Contar hasta un número\n4. Repetir mensaje\n5. Salir"
-    );
-    switch (opcion) {
-        case "1":
-            sumarDosNumeros();
-            break;
-        case "2":
-            verificarUsuario();
-            break;
-        case "3":
-            let numeroFinal = parseInt(prompt("¿Hasta qué número querés contar?"));
-            if (!isNaN(numeroFinal)) {
-                contarHasta(numeroFinal);
-            } else {
-                alert("Por favor, ingresá un número válido.");
-            }
-            break;
-        case "4":
-            repetirMensaje();
-            break;
-        case "5":
-            alert("Gracias por usar el programa. ¡Adiós!");
-            return; // Salir
-        default:
-            alert("Opción no válida, intentá de nuevo.");
-            break;
-    }
-    ejecutarPrograma();
-}
+    let opcion;
+    do {
+        alert("Bienvenido al programa de interacción");
+        opcion = prompt(
+            "Elegí una opción:\n1. Sumar dos números\n2. Verificar usuario\n3. Contar hasta un número\n4. Repetir mensaje\n5. Salir"
+        );
+        switch (opcion) {
+            case "1":
+                sumarDosNumeros();
+                break;
+            case "2":
+                verificarUsuario();
+                break;
+            case "3":
+                let numeroFinal = parseInt(prompt("¿Hasta qué número querés contar?"));
+                if (!isNaN(numeroFinal)) {
+                    contarHasta(numeroFinal);
+                } else {
+                    alert("Por favor, ingresá un número válido.");
+                }
+                break;
+            case "4":
+                repetirMensaje();
+                break;
+            case "5":
+                alert("Gracias por usar el programa. ¡Adiós!");
+                break; // Salir
+            default:
+                alert("Por favor, elige una opción entre 1 y 5");
+                break;
+        }
+    } while (opcion !== "5");
+}   
 ejecutarPrograma();
 
 // CLASE NÚMERO 5 (OBJETOS)
