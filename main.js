@@ -159,3 +159,20 @@ const emprendedora = {
 }
 alert(emprendedora.instagramLaboral);
 alert(emprendedora.instagramPersonal);
+
+// Objeto o Función Constructor/a
+function ProductoLlaveros (forma, precio, stock) {
+    this.forma = forma,
+    this.diseño = diseño,
+    this.precio = precio,
+    this.stock = stock
+    this.importeConIva = function(){return this.importe * 1.21}
+}
+
+const llavero1 = new ProductoLlaveros (círculo, 6500, 15)
+const llavero2 = new ProductoLlaveros (cuadrado, 6500, 5)
+const llavero3 = new ProductoLlaveros (corazón, 6500, 7)
+const llavero4 = new ProductoLlaveros (rectángulo, 6500, 8)
+const llavero5 = new ProductoLlaveros (estrella, 6500, 10)
+
+alert(llavero3.importeConIva())
