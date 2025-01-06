@@ -181,6 +181,7 @@ function ProductoVidrios (forma, medidas, precio, stock) {
     this.medidas = medidas,
     this.precio = precio,
     this.stock = stock
+    this.importeConIva = function(){return this.precio * 1.21}
 }
 
 const vidrio1 = new ProductoVidrios ("cuadrado", "12x12", 14900, 7)
@@ -194,3 +195,29 @@ const vidrio8 = new ProductoVidrios ("círculo", "20cm", 29500, 8)
 const vidrio9 = new ProductoVidrios ("círculo", "25cm", 38500, 4)
 
 alert(vidrio5.importeConIva())
+
+// IN y FOR...IN
+const persona1 = {
+    nombre: "Sofía",
+    edad: 20,
+    ciudad: "San Martín"
+}
+console.log("nombre" in persona1) // devuelve TRUE.
+console.log("origen" in persona1) // devuelve FALSE.
+for (const propiedad in persona1) {
+    console.log (persona1 [propiedad]);
+}
+
+// CLASE NÚMERO 6 (ARRAYS)
+
+// Array con productos anteriores.
+const productos = [
+    {id: 1, nombre: "Llaveros círculo", precio: 6500, stock: 15},
+    {id: 2, nombre: "Llaveros cuadrado", precio: 6500, stock: 5},
+    {id: 3, nombre: "Vidrio cuadrado 12x12", precio: 14900, stock: 7},
+    {id: 4, nombre: "Vidrio rectángulo 20x25", precio: 34300, stock: 6}
+];
+// Recorrer el array para mostrar info de los productos.
+for (let i = 0; i < productos.length; i++) {
+    console.log("Producto: " + productos[i].nombre + ", Precio: $" + productos[i].precio + ", Stock: " + productos[i].stock);
+}
