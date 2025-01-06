@@ -161,18 +161,36 @@ alert(emprendedora.instagramLaboral);
 alert(emprendedora.instagramPersonal);
 
 // Objeto o Función Constructor/a
-function ProductoLlaveros (forma, precio, stock) {
+function ProductoLlaveros (forma, precio, stock) { // Primera letra en MAYUSCULA para diferenciar de funcion normal.
     this.forma = forma,
-    this.diseño = diseño,
     this.precio = precio,
     this.stock = stock
-    this.importeConIva = function(){return this.importe * 1.21}
+    this.importeConIva = function(){return this.precio * 1.21}
 }
 
-const llavero1 = new ProductoLlaveros (círculo, 6500, 15)
-const llavero2 = new ProductoLlaveros (cuadrado, 6500, 5)
-const llavero3 = new ProductoLlaveros (corazón, 6500, 7)
-const llavero4 = new ProductoLlaveros (rectángulo, 6500, 8)
-const llavero5 = new ProductoLlaveros (estrella, 6500, 10)
+const llavero1 = new ProductoLlaveros ("círculo", 6500, 15)
+const llavero2 = new ProductoLlaveros ("cuadrado", 6500, 5)
+const llavero3 = new ProductoLlaveros ("corazón", 6500, 7)
+const llavero4 = new ProductoLlaveros ("rectángulo", 6500, 8)
+const llavero5 = new ProductoLlaveros ("estrella", 6500, 10)
 
 alert(llavero3.importeConIva())
+
+function ProductoVidrios (forma, medidas, precio, stock) {
+    this.forma = forma,
+    this.medidas = medidas,
+    this.precio = precio,
+    this.stock = stock
+}
+
+const vidrio1 = new ProductoVidrios ("cuadrado", "12x12", 14900, 7)
+const vidrio2 = new ProductoVidrios ("cuadrado", "15x15", 18500, 10)
+const vidrio3 = new ProductoVidrios ("rectángulo", "13x18", 22300, 5)
+const vidrio4 = new ProductoVidrios ("cuadrado", "20x20", 27500, 9)
+const vidrio5 = new ProductoVidrios ("rectángulo", "20x25", 34300, 6)
+const vidrio6 = new ProductoVidrios ("rectángulo", "25x30", 41900, 11)
+const vidrio7 = new ProductoVidrios ("círculo", "15cm", 20500, 6 )
+const vidrio8 = new ProductoVidrios ("círculo", "20cm", 29500, 8)
+const vidrio9 = new ProductoVidrios ("círculo", "25cm", 38500, 4)
+
+alert(vidrio5.importeConIva())
