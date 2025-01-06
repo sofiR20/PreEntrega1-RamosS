@@ -138,7 +138,7 @@ function ejecutarPrograma() {
                 break;
             case "5":
                 alert("Gracias por usar el programa. ¡Adiós!");
-                break; // Salir
+                break;
             default:
                 alert("Por favor, elige una opción entre 1 y 5");
                 break;
@@ -148,3 +148,14 @@ function ejecutarPrograma() {
 ejecutarPrograma();
 
 // CLASE NÚMERO 5 (OBJETOS)
+// Representaciones en código de entidades de la vida real.
+
+const emprendedora = {
+    nombre: "Sofía Ramos",
+    edad: 20,
+    cargo: "Artista",
+    instagramLaboral: "@kurama_painting",
+    instagramPersonal: "@sofiramosss_",
+}
+alert(emprendedora.instagramLaboral);
+alert(emprendedora.instagramPersonal);
