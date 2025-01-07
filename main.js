@@ -253,3 +253,5 @@ console.log("Todos los productos después de concat:");
 for (let i = 0; i < todosLosProductos.length; i++) {
     console.log("Producto: " + todosLosProductos[i].nombre + ", Precio: $" + todosLosProductos[i].precio + ", Stock: " + todosLosProductos[i].stock);
 }
+
+// CLASE NÚMERO 7 (Funciones de orden superior)
