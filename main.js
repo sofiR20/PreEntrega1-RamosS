@@ -255,3 +255,4 @@ for (let i = 0; i < todosLosProductos.length; i++) {
 }
 
 // CLASE NÚMERO 7 (Funciones de orden superior)
+// CLASE NÚMERO 7 (Funciones de orden superior)
