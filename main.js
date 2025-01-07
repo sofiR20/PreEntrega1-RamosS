@@ -221,3 +221,27 @@ const productos = [
 for (let i = 0; i < productos.length; i++) {
     console.log("Producto: " + productos[i].nombre + ", Precio: $" + productos[i].precio + ", Stock: " + productos[i].stock);
 }
+
+// METODOS: length, push, pop, shift, unshift, slice, splice, concat, join, index of, includes, reverse.
+
+// Método splice
+productos.splice(2, 1, {id: 5, nombre: "Vidrio redondo 15cm", precio: 25000, stock: 8});
+
+console.log("Productos después de splice:");
+for (let i = 0; i < productos.length; i++) {
+    console.log("Producto: " + productos[i].nombre + ", Precio: $" + productos[i].precio + ", Stock: " + productos[i].stock);
+}
+
+// Método concat
+const nuevosProductos = [
+    {id: 6, nombre: "Llaveros estrella", precio: 7000, stock: 10},
+    {id: 7, nombre: "Vidrio cuadrado 25x25", precio: 36000, stock: 5}
+];
+
+// Concatenar arrays.
+const todosLosProductos = productos.concat(nuevosProductos);
+
+console.log("Todos los productos después de concat:");
+for (let i = 0; i < todosLosProductos.length; i++) {
+    console.log("Producto: " + todosLosProductos[i].nombre + ", Precio: $" + todosLosProductos[i].precio + ", Stock: " + todosLosProductos[i].stock);
+}
