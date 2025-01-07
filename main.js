@@ -222,6 +222,14 @@ for (let i = 0; i < productos.length; i++) {
     console.log("Producto: " + productos[i].nombre + ", Precio: $" + productos[i].precio + ", Stock: " + productos[i].stock);
 }
 
+// FUNCION DE ORDEN SUPERIOR - Filtrar productos con precio mayor a 10.000
+const productosCaros = productos.filter(producto => producto.precio > 10000);
+
+console.log("Productos con precio mayor a $10,000:");
+productosCaros.forEach(producto => {
+    console.log("Producto: " + producto.nombre + ", Precio: $" + producto.precio + ", Stock: " + producto.stock);
+});
+
 // METODOS: length, push, pop, shift, unshift, slice, splice, concat, join, index of, includes, reverse.
 
 // Método splice
@@ -244,34 +252,4 @@ const todosLosProductos = productos.concat(nuevosProductos);
 console.log("Todos los productos después de concat:");
 for (let i = 0; i < todosLosProductos.length; i++) {
     console.log("Producto: " + todosLosProductos[i].nombre + ", Precio: $" + todosLosProductos[i].precio + ", Stock: " + todosLosProductos[i].stock);
-}
-
-// FUNCIONES DE ORDEN SUPERIOR
-
-const productos = [
-    {id: 1, nombre: "Llaveros círculo", precio: 6500, stock: 15},
-    {id: 2, nombre: "Llaveros cuadrado", precio: 6500, stock: 5},
-    {id: 3, nombre: "Vidrio cuadrado 12x12", precio: 14900, stock: 7},
-    {id: 4, nombre: "Vidrio rectángulo 20x25", precio: 34300, stock: 6}
-];
-
-const nombresProductos = productos.map(function(producto) {
-    return producto.nombre;
-});
-
-console.log("Nombres de productos:");
-console.log(nombresProductos);
-
-productos.splice(2, 1, {id: 5, nombre: "Vidrio redondo 15cm", precio: 25000, stock: 8});
-
-const productosConIva = productos.map(function(producto) {
-    return {
-        ...producto,
-        precioConIva: producto.precio * 1.21
-    };
-});
-
-console.log("Productos con IVA:");
-for (let i = 0; i < productosConIva.length; i++) {
-    console.log("Producto: " + productosConIva[i].nombre + ", Precio con IVA: $" + productosConIva[i].precioConIva);
 }
